@@ -4,3 +4,4 @@ A simple command line scrambler for cubes written in python. Work in progress, w
 To-do list:
 - Make it impossible to get the same move-set multiple times in a row.
 - Add scrambles for larger cubes, minxes etc.
+- Add a timer?

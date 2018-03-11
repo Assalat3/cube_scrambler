@@ -25,7 +25,7 @@ def randomizer():
             
             #Add all the moves to the list in the correct type.
             moves2x2.append(moveset2x2[int(floor(uniform(0, len(moveset2x2))))])
-            
+              
         #Prints the list with each moveset on a new line.
         n = 0
         while n <= 10:
@@ -33,7 +33,7 @@ def randomizer():
             n += 1
         
         #Clear the list for the next scramble.
-        for i in range(11):
+        for i in range(len(moves2x2)):
             moves2x2.pop()
             
         randomizer()
@@ -51,7 +51,7 @@ def randomizer():
             n += 1
         
         #Clear the list for the next scramble.
-        for i in range(20):
+        for i in range(len(moves3x3)):
             moves3x3.pop()
             
         randomizer()

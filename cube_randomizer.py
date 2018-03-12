@@ -31,8 +31,8 @@ def randomizer():
         #Remove back-to-back moves that are identical. Add new move to the
         #end of the list.
         n = 0
-        while n <= 10:
-            if moves2x2[n] == moves2x2[n - 1]:
+        while n <= 9:
+            if moves2x2[n] == moves2x2[n + 1]:
                 moves2x2.pop(n)
                 moves2x2.append(moveset2x2[int(floor(uniform(
                     0, len(moveset2x2))))])
@@ -61,8 +61,8 @@ def randomizer():
         #Remove back-to-back moves that are identical. Add new move to the
         #end of the list.
         n = 0
-        while n <=19:
-            if moves3x3[n] == moves3x3[n - 1]:
+        while n <=18:
+            if moves3x3[n] == moves3x3[n + 1]:
                 moves3x3.pop(n)
                 moves3x3.append(moveset3x3[int(floor(uniform(
                     0, len(moveset3x3))))])

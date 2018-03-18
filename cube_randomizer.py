@@ -4,11 +4,13 @@ from random import uniform
 
 #Lists for the possible moves, and the generated moves.
 moveset2x2 = ['R', '2R', 'L', '2L', 'U', '2U', 'D', '2D', 'B', '2B',
-         "R' ", "2R' ", "L' ", "2L' ", "U' ", "2U' ", "D' ","2D' ", "B' ", "2B' "]
-moveset3x3 = ['R', '2R', 'L', '2L', 'U', '2U', 'D', '2D', 'B', '2B',
-         "R'", "2R'", "L'", "2L'", "U'", "2U'", "D'","2D'", "B'", "2B'",
-         "M", "2M", "M'", "2M'"]
-
+         "R' ", "2R' ", "L' ", "2L' ", "U' ", "2U' ", "D' ","2D' ", "B' ", "2B' "] 
+         #20 in total
+         
+moveset3x3 = ['R', '2R', 'L', '2L', 'U', '2U', 'D', '2D', 'B', '2B', "M", "2M",
+         "R'", "2R'", "L'", "2L'", "U'", "2U'", "D'","2D'", "B'", "2B'", "M'", "2M'"]
+        #24 in total
+        
 moves2x2 = []
 moves3x3 = []
 
@@ -31,13 +33,21 @@ def randomizer():
         #Remove back-to-back moves that are identical. Add new move to the
         #end of the list.
         n = 0
+        
         while n <= 9:
             if moves2x2[n] == moves2x2[n + 1]:
-                moves2x2.pop(n)
-                moves2x2.append(moveset2x2[int(floor(uniform(
-                    0, len(moveset2x2))))])
+                moves2x2.pop(n + 1)
+                moves2x2.append(moveset2x2[int(floor(uniform(0, len(moveset2x2))))])
                 n -= 1
+            
+            m = 0
+            while m <= 9 and n % 2:
+                if moves2x2[n] and moves2x2[n + 1] == moveset2x2[n] and moveset2x2[n + 1]:
+                    moves2x2.pop(n + 1)
+                    moves2x2.append(moveset2x2[int(floor(uniform(0, len(moveset2x2))))])
+                m += 1
             n += 1
+
             
         #Prints the list with each moveset on a new line.
         m = 0

@@ -12,7 +12,7 @@ moves3x3 = []
 #The function to create the moves.
 def randomizer():
     #Ask for user input. Start of the loop.
-    cube = raw_input("What cube are you solving? Valid answers: 2x2 or 2, quit  ")
+    cube = raw_input("What cube are you solving? Valid answers: 2x2 or 2, 3x3 or 3, quit")
     
     #Stops the program.
     if cube == "quit" or cube == "q":
@@ -33,23 +33,23 @@ def randomizer():
                 n -= 1
             n += 1
     
-    #Adds together the number of moves, the move itself, and if it's prime.
-    #Creates a list into which those get added.
-    m = 0
-    moveset2x2 = []
-    while m <= 10:
-        move = count[randrange(2)] + moves2x2[m] + prime[randrange(2)]
-        moveset2x2.append(move)
-        m += 1
+        #Adds together the number of moves, the move itself, and if it's prime.
+        #Creates a list into which those get added.
+        m = 0
+        moveset2x2 = []
+        while m <= 10:
+            move = count[randrange(2)] + moves2x2[m] + prime[randrange(2)]
+            moveset2x2.append(move)
+            m += 1
     
-    #Prints the list with each input in a new row.
-    b = 0
-    while b <= 10:
-        print(moveset2x2[b])
-        b += 1
+        #Prints the list with each input in a new row.
+        b = 0
+        while b <= 10:
+            print(moveset2x2[b])
+            b += 1
     
-    #Calls the function again.
-    randomizer()
+        #Calls the function again.
+        randomizer()
     
     #For 3x3
     if cube == "3x3" or cube == "3":
@@ -70,23 +70,28 @@ def randomizer():
                 n -= 1
             n += 1
     
-    #Adds together the number of moves, the move itself, and if it's prime.
-    #Creates a list into which those get added.
-    m = 0
-    moveset3x3 = []
-    while m <= 19:
-        move = count[randrange(2)] + moves3x3[m] + prime[randrange(2)]
-        moveset3x3.append(move)
-        m += 1
+        #Adds together the number of moves, the move itself, and if it's prime.
+        #Creates a list into which those get added.
+        m = 0
+        moveset3x3 = []
+        while m <= 19:
+            move = count[randrange(2)] + moves3x3[m] + prime[randrange(2)]
+            moveset3x3.append(move)
+            m += 1
     
-    #Prints the list with each input in a new row.
-    b = 0
-    while b <= 19:
-        print(moveset3x3[b])
-        b += 1
+        #Prints the list with each input in a new row.
+        b = 0
+        while b <= 19:
+            print(moveset3x3[b])
+            b += 1
     
-    #Calls the function again.
-    randomizer()
+        #Calls the function again.
+        randomizer()
+    
+    #If other input is given, print the following message:
+    else:
+        print("Invalid input")
+        randomizer()
     
 #Calls the function.
 randomizer()

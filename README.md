@@ -2,7 +2,7 @@
 A simple command line scrambler for cubes written in python. Work in progress, will update later.
 
 Known bugs and imperfections:
-- After running a 2x2 scramble, trying to quit gives the user "invalid argument" response. I have no idea.
+- After running a 2x2 scramble, trying to quit gives the user "invalid argument" response. I have no idea. Just type it again and the program exits as it should. A trivial bug for now.
 
 To-do list:
 - (FIXED as of 21.3.2018. Redid the code, should take care of everything.) Make it impossible to get the same move-set multiple times in a row.

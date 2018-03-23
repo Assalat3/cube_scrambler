@@ -1,5 +1,6 @@
 #Importing randrange to get pseudorandom numbers.
 from random import randrange
+from simple_timer import timer
 
 #Creating the lists that we need.
 count = ["","2"]
@@ -19,7 +20,7 @@ def randomizer():
         return
     
     #For 2x2.
-    if cube == "2x2" or cube == "2":
+    elif cube == "2x2" or cube == "2":
         #Adds letters to moves2x2 from moves.
         for i in range(11):
             moves2x2.append(moves[randrange(4)])
@@ -47,26 +48,28 @@ def randomizer():
         while b <= 10:
             print(moveset2x2[b])
             b += 1
+          
+        #Calls the timer function.
+        timer()
     
         #Calls the function again.
         randomizer()
     
     #For 3x3
-    if cube == "3x3" or cube == "3":
+    elif cube == "3x3" or cube == "3":
         #Adding some letters for scrambles to moves - list.
         moves.append("B")
         moves.append("D")
-        moves.append("M")
         #Adds letters to moves3x3 from moves.
         for i in range(20):
-            moves3x3.append(moves[randrange(7)])
+            moves3x3.append(moves[randrange(6)])
 
         #Removes back to back letters that are the same.
         n = 1
         while n <= 19:
             if moves3x3[n-1] == moves3x3[n]:
                 moves3x3.pop(n)
-                moves3x3.append(moves[randrange(7)])
+                moves3x3.append(moves[randrange(6)])
                 n -= 1
             n += 1
     
@@ -84,13 +87,15 @@ def randomizer():
         while b <= 19:
             print(moveset3x3[b])
             b += 1
+            
+        #Calls the timer function.
+        timer()
     
         #Calls the function again.
         randomizer()
-    
-    #If other input is given, print the following message:
+        
     else:
-        print("Invalid input")
+        print("Invalid input.")
         randomizer()
     
 #Calls the function.

@@ -1,4 +1,5 @@
 from time import time
+from time import sleep
 
 def timer():
     try:
@@ -13,5 +14,12 @@ def timer():
             t1 = time()
             tfinal = (t1 - t0)
             print("Your time was:  {0: .3f}").format(tfinal)
-
-timer()
+            
+def countdown():
+    n = 15
+    while n >= 1:
+        print(n)
+        sleep(1)
+        n -= 1
+        if n == 0:
+            timer()

@@ -13,3 +13,5 @@ def timer():
             t1 = time()
             tfinal = (t1 - t0)
             print("Your time was:  {0: .3f}").format(tfinal)
+
+timer()
